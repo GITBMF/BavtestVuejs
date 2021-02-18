@@ -1,9 +1,11 @@
 <template>
-      <div class="forms-body body w-full bg-white md:bg-gray-100 h-screen py-8">
+      <div class="body">
+        <e-header/>
+        <div class="forms-body main body w-full bg-white md:bg-gray-100 h-screen py-8">
         <div class="p-5 md:shadow-lg text-base rounded max-w-screen-sm mx-auto pb-4 bg-white rounded">
           <h1 class=" heading text-center text-4xl pt-5 mb-8 color-primary font-semibold">Add a Product or Service</h1>
           <div class="grid grid-cols-10 gap-x-4 mr-2">
-            <div class="product-name relative sm:mx-2 mb-2 col-span-7">
+            <div class="product-name relative sm:mx-2 mb-2 col-span-10 md:col-span-6">
               <input
                 v-model="product_name"
                 type="text"
@@ -12,7 +14,7 @@
                 required
               />
             </div>
-            <div class="upload-image relative col-span-3 row-span-2 bg-gray-200 mb-3 rounded border-2 border-dashed border-gray-400 cursor-pointer">
+            <div class="upload-image relative row-start-3 col-start-3 col-span-6 sm:col-start-3 sm:col-span-5 md:col-start-1 md:row-start-1 md:col-span-4 row-span-2 bg-gray-200 mb-3 rounded border-2 border-dashed border-gray-400 cursor-pointer">
               <input
                 @change="imChanged"
                 accept="image/*"
@@ -31,7 +33,7 @@
               />
             </div>
             
-            <div class="description relative sm:mx-2 mb-2 col-span-7">
+            <div class="description relative row-start-2 sm:mx-2 mb-2 col-span-10 md:col-span-6">
               <textarea
                 v-model="description"
                 placeholder="product description*"
@@ -63,8 +65,8 @@
               <option value="Option3">Bad</option>
             </select>
           </div>
-            <div class="flex justify-between items-center w-full px-4">
-              <label for="discount" class="flex items-center">
+            <div class="flex justify-between items-center flex-wrap w-full px-4">
+              <label for="discount" class="flex items-center mr-2">
                 
                 <input
                   style="width: 18px; height: 18px"
@@ -75,7 +77,7 @@
                 />
                   Discount
               </label>
-              <label for="is-service" class="flex items-center">
+              <label for="is-service" class="flex items-center mr-2">
                 
                 <input
                   style="width: 18px; height: 18px"
@@ -111,11 +113,14 @@
           </div>
         </div>
       </div>
+      </div>
     
 </template>
 
 <script>
+import eHeader from '../../components/e-header.vue';
 export default {
+  components: { eHeader },
   name: "AddProduct",
   data() {
     return {
@@ -165,6 +170,17 @@ export default {
 
 img:not([src = " "]) {
   background-color: white;
+}
+
+@media only screen and (max-width: 400px) {
+  .upload-image {
+    grid-column: 2 / span 8;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .upload-image {
+    grid-column: 1 / span 10;
+  }
 }
 </style>
 

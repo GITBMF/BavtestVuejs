@@ -25,6 +25,10 @@
     border-color: #e75c18;
 }
 
+.main {
+    margin-top: 60px;
+}
+
 button:disabled {
     opacity: 0.3;
     pointer-events: none;

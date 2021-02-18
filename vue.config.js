@@ -19,6 +19,16 @@ module.exports = {
             entry: './src/pages/list-all/main.js',
             template: 'public/index.html',
             title: 'Products and services' 
+        },
+        'product-page': {
+            entry: './src/pages/product-page/main.js',
+            template: 'public/index.html',
+            title: 'Explore Product'
+        },
+        'index': {
+            entry: './src/pages/list-all/main.js',
+            template: 'public/index.html',
+            title: 'Login to bridgeAfrica',
         }
     }
 }

@@ -1,6 +1,17 @@
 <template>
-  <div class="w-full h-full bg-gray-100">
+  <div class="body w-full h-full">
+    <e-header/>
+    <div class="main w-full h-full bg-gray-100">
     <div class="product-items shadow-lg bg-white justify-center flex flex-wrap max-w-screen-xl mx-auto">
+    <div class="add-product flex-1 px-2 py-2">
+      <div class="relative flex justify-center w-full h-full bg-gray-400 hover:bg-gray-500 text-white rounded">
+      <div class="content flex flex-col justify-center items-center justify-center font-bold text-lg">
+        <span class="-mb-1 text-3xl">+</span>
+        <span>Add a Product/Service</span>
+      </div>
+      <a href="../add-product" class="absolute top-0 left-0 h-full w-full"></a>
+    </div>
+    </div>
     <div 
       class="product-item flex-1 px-2 py-2"
       v-for="product in product_array"
@@ -30,11 +41,13 @@
     <div class="product-item product-clone flex-1 px-2 h-0">
 
     </div>
+    </div>
   </div>
   </div>
 </template>
 
 <script>
+import EHeader from '../../components/e-header.vue'
 import productPreview from '../../components/product-preview'
 export default {
   name: "listAll",
@@ -365,7 +378,8 @@ export default {
     }
   },
   components: {
-    productPreview
+    productPreview,
+    EHeader
   }
 }
 </script>
@@ -374,9 +388,14 @@ export default {
 .product-items {
   width: 90%;
 }
-.product-item {
+.product-item,.add-product {
   min-width: 300px;
   max-width: 400px;
+}
+
+.add-product:hover {
+  letter-spacing: 1px;
+  transition: all 0.3s;
 }
 
 @media only screen and (max-width: 769px) {

@@ -37,7 +37,7 @@
                 -{{ discount }}%
             </div>
         </div>
-        <a href="" class="absolute top-0 left-0 w-full h-full"></a>
+        <a href="../product-page" class="absolute top-0 left-0 w-full h-full"></a>
     </div>
 </template>
 

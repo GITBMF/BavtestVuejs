@@ -1,5 +1,7 @@
 <template>
-      <div class="forms-body body w-full bg-white md:bg-gray-100 h-screen py-8">
+      <div class="body">
+        <e-header/>
+        <div class="main forms-body body w-full bg-white md:bg-gray-100 h-screen py-8">
         <form class="p-5 md:shadow-lg text-base rounded max-w-screen-sm mx-auto pb-4 bg-white rounded" action="">
           <h1 class=" heading text-center text-4xl pt-5 mb-8 color-primary font-semibold">LogIn</h1>
           <div class="email relative sm:mx-2 mb-2">
@@ -60,11 +62,14 @@
           </div>
         </form>
       </div>
+      </div>
     
 </template>
 
 <script>
+import eHeader from '../../components/e-header.vue';
 export default {
+  components: { eHeader },
   name: "Login",
 };
   
