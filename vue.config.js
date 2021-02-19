@@ -28,7 +28,7 @@ module.exports = {
         'index': {
             entry: './src/pages/list-all/main.js',
             template: 'public/index.html',
-            title: 'Login to bridgeAfrica',
+            title: 'Welcome to bridgeAfrica',
         }
     }
 }
