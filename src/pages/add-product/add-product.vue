@@ -105,7 +105,7 @@
           >
             <button
                 type="button"
-                @click="alert_window"
+                @click="add_item"
                 class="relative py-2 px-4 btn-primary rounded font-bold w-40"
                 :disabled="!validator"
             >
@@ -135,6 +135,7 @@ export default {
       condition: 'none',
       imageFile: null,
       image: null,
+      myStorage: window.localStorage
     };
   },
   computed: {
@@ -146,7 +147,23 @@ export default {
     change_condition(event) {
       this.condition = event.target.value;
     },
-    alert_window() {
+    add_item() {
+      if(!this.myStorage.getItem('product_items')) {
+        this.myStorage.setItem('product_items', JSON.stringify([]))
+      }
+
+      let this_object = this;
+      let my_array;
+      let product_temp_item = {
+      prodname: this_object.product_name,
+      description: this_object.description,
+      price: this_object.price,
+      src: this_object.image.src,
+      discount: '20',
+      old_price: '1200'
+      };
+      (my_array = JSON.parse(this.myStorage.getItem('product_items'))).unshift(product_temp_item);
+      this.myStorage.setItem('product_items', JSON.stringify(my_array));
       alert("Product added succesfully");
     },
     imChanged(event) {

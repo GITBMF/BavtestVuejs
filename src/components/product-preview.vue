@@ -3,7 +3,7 @@
         <div class="image-div">
             <img
                 class="image-proper w-full h-full outline-none border-0"
-                :src="require('@/' + image)"
+                :src="src != ''? src: require('@/' + image)"
                 
             />
         </div>
@@ -59,7 +59,10 @@ export default {
         },
         image: {
             type: String,
-            required: true
+        },
+        src: {
+            type: String,
+            default: ""
         },
 
         discount: String,

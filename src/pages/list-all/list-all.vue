@@ -14,6 +14,20 @@
     </div>
     <div 
       class="product-item flex-1 px-2 py-2"
+      v-for="product in product_array_local"
+      :key="product.id"
+    >
+      <product-preview
+        :prodname="product.prodname"
+        :description="product.description"
+        :price="product.price"
+        :src="product.src"
+        :discount="product.discount"
+        :old_price="product.old_price"
+      />
+    </div>
+    <div 
+      class="product-item flex-1 px-2 py-2"
       v-for="product in product_array"
       :key="product.id"
     >
@@ -53,6 +67,7 @@ export default {
   name: "listAll",
   data() {
     return {
+      myStorage: window.localStorage,
       product_array: [
         {
           prodname: 'First Product',
@@ -60,7 +75,7 @@ export default {
           price: '1000',
           image: 'assets/image1.jpg',
           discount: '10',
-          old_price: '1200'
+          old_price: '1200',
         },
         {
           prodname: 'Second Product',
@@ -375,6 +390,14 @@ export default {
           old_price: '120'
         },
       ],
+    }
+  },
+  created() {
+
+  },
+  computed: {
+    product_array_local() {
+      return JSON.parse(this.myStorage.getItem('product_items'));
     }
   },
   components: {
