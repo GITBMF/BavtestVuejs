@@ -4,7 +4,7 @@
     <div class="main w-full h-full bg-gray-100">
     <div class="product-items shadow-lg bg-white justify-center flex flex-wrap max-w-screen-xl mx-auto">
     <div class="add-product flex-1 px-2 py-2">
-      <div class="relative flex justify-center w-full h-full bg-gray-400 hover:bg-gray-500 text-white rounded">
+      <div class="add-product-cont relative flex justify-center w-full h-full bg-gray-400 hover:bg-gray-500 text-white rounded">
       <div class="content flex flex-col justify-center items-center justify-center font-bold text-lg">
         <span class="-mb-1 text-3xl">+</span>
         <span>Add a Product/Service</span>
@@ -396,6 +396,10 @@ export default {
 .add-product:hover {
   letter-spacing: 1px;
   transition: all 0.3s;
+}
+
+.add-product-cont {
+  min-height: 150px;
 }
 
 @media only screen and (max-width: 769px) {

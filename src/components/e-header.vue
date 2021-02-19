@@ -12,7 +12,11 @@
                 </div>
             </div>
             <div class="flex">
-                <a href="../login" class="flex items-center justify-center px-4 rounded">Logout</a>
+                <a 
+                    @click="alert_window"
+                    href="../login" 
+                    class="flex items-center justify-center px-4 rounded"
+                >Logout</a>
             </div>
         </div>
     </div>
@@ -20,7 +24,12 @@
 
 <script>
 export default {
-    name: 'EHeader'
+    name: 'EHeader',
+    methods: {
+        alert_window() {
+            alert("You have just been logged out of your account");
+        },
+    }
 }
 </script>
 

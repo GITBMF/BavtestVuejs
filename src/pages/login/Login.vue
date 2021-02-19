@@ -6,6 +6,7 @@
           <h1 class=" heading text-center text-4xl pt-5 mb-8 color-primary font-semibold">LogIn</h1>
           <div class="email relative sm:mx-2 mb-2">
             <input
+              v-model="email"
               type="email"
               placeholder="email"
               class="border focus-border-primary outline-none pl-4 mr-1 text-sm rounded w-full h-12"
@@ -14,6 +15,7 @@
           </div>
           <div class="password relative sm:mx-2 mb-2 mt-4">
             <input
+              v-model="password"
               type="password"
               id="password"
               placeholder="password"
@@ -46,10 +48,12 @@
             class="log-in flex mr-2 justify-center md:justify-end mt-4"
           >
             <button
+                :disabled="disabled"
                 type="submit"
-                class="logIn py-2 px-4 btn-primary rounded font-bold w-40"
+                class="logIn relative py-2 px-4 btn-primary rounded font-bold w-40"
             >
               Login
+              <a href=".." class="absolute top-0 left-0 w-full h-full"></a>
             </button>
           </div>
           <div
@@ -71,6 +75,17 @@ import eHeader from '../../components/e-header.vue';
 export default {
   components: { eHeader },
   name: "Login",
+  data() {
+    return {
+      email: "",
+      password: "",
+    }
+  },
+  computed: {
+    disabled() {
+      return (this.email === "") || (this.password === "");
+    }
+  }
 };
   
 </script>

@@ -80,10 +80,12 @@
           >
             <button
                 type="submit"
-                class="py-2 px-4 btn-primary rounded font-bold w-40"
+                class="py-2 relative px-4 btn-primary rounded font-bold w-40"
                 :disabled="!validator"
+                @click="alert_window"
             >
               Create
+              <a href=".." class="absolute top-0 left-0 w-full h-full"></a>
             </button>
           </div>
           <div
@@ -125,7 +127,10 @@ export default {
   methods: {
     update_check(event) {
       this.check = event.target.checked;
-    }
+    },
+    alert_window() {
+      alert("Acoount created succesfully");
+    },
   }
 };
   

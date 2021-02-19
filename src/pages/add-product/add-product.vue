@@ -105,10 +105,15 @@
           >
             <button
                 type="button"
-                class="py-2 px-4 btn-primary rounded font-bold w-40"
+                @click="alert_window"
+                class="relative py-2 px-4 btn-primary rounded font-bold w-40"
                 :disabled="!validator"
             >
               Add
+              <a 
+                href=".." 
+                class="absolute top-0 left-0 w-full h-full"
+              ></a>
             </button>
           </div>
         </div>
@@ -140,6 +145,9 @@ export default {
   methods: {
     change_condition(event) {
       this.condition = event.target.value;
+    },
+    alert_window() {
+      alert("Product added succesfully");
     },
     imChanged(event) {
       if(event.target.files[0]) {
