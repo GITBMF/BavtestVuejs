@@ -1,5 +1,7 @@
 # testbavvuejs
 
+## Please make sure you are using node v11 and above to in order to run this development
+
 ## Project setup
 ```
 npm install
