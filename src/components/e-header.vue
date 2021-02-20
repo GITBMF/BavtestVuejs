@@ -13,7 +13,6 @@
             </div>
             <div class="flex">
                 <a 
-                    @click="alert_window"
                     href="../login" 
                     class="flex items-center justify-center px-4 rounded"
                 >Logout</a>
@@ -25,11 +24,6 @@
 <script>
 export default {
     name: 'EHeader',
-    methods: {
-        alert_window() {
-            alert("You have just been logged out of your account");
-        },
-    }
 }
 </script>
 
